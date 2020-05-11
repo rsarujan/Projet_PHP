@@ -35,7 +35,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	</tr>
 	<tr>
 		<?php 
-
+			echo "<br><br>";
 			$formation=$bdd->prepare('SELECT Intitule_formation, libelle from Formation f, Utilisateur u, Statuts s where u.choixFormation=f.id_formation and u.id_statuts=s.id_statuts and u.id_etudiant=?');
 			$formation->execute(array($_SESSION['id_etudiant']));
 			while($lig = $formation->fetch(PDO::FETCH_ASSOC)){
@@ -56,7 +56,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
+			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

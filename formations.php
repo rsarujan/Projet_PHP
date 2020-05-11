@@ -35,6 +35,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	</tr>
 	<tr>
 		<?php 
+		echo "<br><br>";
 			$formation=$bdd->prepare('SELECT * from formation');
 			$formation->execute();
 			while($lig = $formation->fetch()){
@@ -66,7 +67,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
+			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

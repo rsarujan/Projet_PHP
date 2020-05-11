@@ -94,7 +94,7 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 			<li><a href = "formationsP.php">Afficher les formations</a></li><br>
 			<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
 			<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
-			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
+			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

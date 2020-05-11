@@ -45,12 +45,11 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	<tr>
 		<?php 
 			//$formation=$bdd->prepare('SELECT DISTINCT id_etudiant,Nom,Prenom,choixFormation,Intitule_formation,libelle from Utilisateur u, DocumentsFourni df, Formation f, Statuts s where u.TypeUser=3 and u.choixFormation=df.id_formation and df.id_formation=f.id_formation and u.Status=s.id_statuts ORDER BY choixFormation ASC');
-
-			$formation=$bdd->prepare('SELECT DISTINCT id_etudiant,Nom,Prenom,choixFormation,Intitule_formation,libelle, u.id_statuts from Utilisateur u, DocumentsFourni df, Formation f, Statuts s where u.TypeUser=3 and u.choixFormation=f.id_formation and u.id_statuts=s.id_statuts ORDER BY choixFormation ASC');
+			echo "<br><br>";
+			$formation=$bdd->prepare('SELECT DISTINCT id_etudiant,Nom,Prenom,choixFormation,Intitule_formation,libelle, u.id_statuts from Utilisateur u, DocumentsFourni df, Formation f, Statuts s where u.TypeUser=3 and u.choixFormation=f.id_formation and u.id_statuts=s.id_statuts ORDER BY choixFormation,id_etudiant ASC');
 			$formation->execute();
 			while($lig = $formation->fetch(PDO::FETCH_ASSOC)){
 				//echo $lig['id_formation'];
-				echo "<br><br>";
 				echo "<tr>";
 					echo "<td>".$lig['id_etudiant']."</td>";
 					echo "<td><a href='AddFilesE.php?id_etudiant=".$lig['id_etudiant']."'>";
@@ -87,7 +86,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			<li><a href = "formationsP.php">Afficher les formations</a></li><br>
 			<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
 			<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
-			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
+			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

@@ -52,11 +52,12 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			</td>
 		</tr>
 			<?php
+			echo "<br><br>";
 				$doc=$bdd->prepare('SELECT u.id_etudiant,Nom,Prenom,id_commentaire,Commentaire from Commentaire c, Utilisateur u where u.id_etudiant=c.id_etudiant');
 				$doc->execute();
 
 				while($lig = $doc->fetch()){
-					echo "<br><br>";
+					
 					echo "<tr>";
 						echo "<td>".$lig['id_etudiant']."</td>";
 						echo "<td>".$lig['Nom']."</td>";
@@ -78,7 +79,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			<li><a href = "Enseignants.php">Liste des enseignants</a></li><br>
 			<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
 			<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
-			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
+			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>
