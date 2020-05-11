@@ -69,7 +69,7 @@ if(isset($_POST['forminscription']))
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 
 </head>
 <body>
@@ -134,6 +134,17 @@ if(isset($_POST['forminscription']))
 				echo '<font color="red">'.$erreur.'</font>';
 			}
 		?>
-	</div>
+	</div></main>
+	<nav>
+		<ul>
+			<li><a href = "editerProfileA.php">Editer mon profil</a></li><br>
+			<li><a href = "formationsA.php">Afficher les formations</a></li><br>
+			<li><a href = "AddFormation.php">Ajouter une formation</a></li><br>
+			<li><a href = "Enseignants.php">Liste des enseignants</a></li><br>
+			<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
+			<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
+			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+		</ul>
+	</nav>
 </body>
 </html>

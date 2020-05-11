@@ -18,7 +18,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 
 </head>
 <body>
@@ -39,8 +39,10 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			if(isset($_SESSION['id_etudiant']) and $userinfo['id_etudiant'] == $_SESSION['id_etudiant'])
 			{
 				?>
-				<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
-				<li><a href = "FormationP.php">Afficher les formations</a></li><br>
+				<li><a href = "editerProfileP.php">Editer mon profil</a></li><br>
+				<li><a href = "formationsP.php">Afficher les formations</a></li><br>
+				<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
+				<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
 				<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 				<!--<a href = "indexFile.php">add file</a><br>-->
 				<?php 

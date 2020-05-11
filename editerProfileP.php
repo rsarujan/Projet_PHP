@@ -10,14 +10,6 @@ if(isset($_SESSION['id_etudiant']))
 	$user = $requser->fetch();
 
 
-	if(isset($_POST['nouveauAdresse']) and !empty($_POST['nouveauAdresse']) and $_POST['nouveauAdresse'] != $user['nouveauAdresse'])
-	{
-		$nouveauAdresse = htmlspecialchars($_POST['nouveauAdresse']);
-		$insertAdresse = $bdd->prepare("UPDATE Utilisateur SET adresse = ? WHERE id_etudiant = ?");
-		$insertAdresse->execute(array($nouveauAdresse,$_SESSION['id_etudiant']));
-		header('Location: Connexion.php');
-	}
-
 	if(isset($_POST['nouveauNumTel']) and !empty($_POST['nouveauNumTel']) and $_POST['nouveauNumTel'] != $user['nouveauNumTel'])
 	{
 		$nouveauNumTel = htmlspecialchars($_POST['nouveauNumTel']);
@@ -79,30 +71,6 @@ if(isset($_SESSION['id_etudiant']))
 				</tr>
 				<tr>
 					<td>
-						Carte d'ID:
-					</td>
-					<td>
-						<input type="number" readonly value="<?php echo $user['carte_id'];?>">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Date de Naissance:
-					</td>
-					<td>
-						<input type="date" readonly value="<?php echo $user['date_naiss'];?>">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Adresse:
-					</td>
-					<td>
-						<input type="text" name="nouveauAdresse" placeholder="Adresse" value="<?php echo $user['adresse'];?>">
-					</td>
-				</tr>
-				<tr>
-					<td>
 						Numéro de Téléphone:
 					</td>
 					<td>
@@ -145,10 +113,10 @@ if(isset($_SESSION['id_etudiant']))
 	</main>
 	<nav>
 		<ul>
-			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
-			<li><a href = "formations.php">Afficher les formations</a></li><br>
-			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
-			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
+			<li><a href = "editerProfileP.php">Editer mon profil</a></li><br>
+			<li><a href = "formationsP.php">Afficher les formations</a></li><br>
+			<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
+			<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
 			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>

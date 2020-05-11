@@ -71,7 +71,7 @@ if(isset($_POST['forminscription']))
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 
 </head>
 <body>

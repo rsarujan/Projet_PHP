@@ -32,7 +32,7 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 <html>
 <head>
 	<title>Déposer des fichiers</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 </head>
 <body>
 	<!--<?php //echo $formInfo['id_formation'];?>-->
@@ -52,6 +52,7 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 			</tr>
 			<tr>
 				<?php
+				echo "<br><br>";
 				//echo $lig['id_etudiant'];
 				/*$doc=$bdd->prepare('SELECT * from Documents');
 				$doc->execute();*/
@@ -89,9 +90,10 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 	</main>
 	<nav>
 		<ul>
-			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
-			<li><a href = "formations.php">Afficher les formations</a></li><br>
-			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
+			<li><a href = "editerProfileP.php">Editer mon profil</a></li><br>
+			<li><a href = "formationsP.php">Afficher les formations</a></li><br>
+			<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
+			<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
 			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>

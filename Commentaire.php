@@ -30,7 +30,7 @@ if(isset($_POST['formComment']))
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 
 </head>
 <body>
@@ -61,9 +61,6 @@ if(isset($_POST['formComment']))
 		<table>
 			<tr>
 		<td>
-			<STRONG></STRONG>
-		</td>
-		<td>
 			<STRONG>Commentaire laissé</STRONG>
 		</td>
 		<td>
@@ -77,9 +74,9 @@ if(isset($_POST['formComment']))
 				while($lig = $doc->fetch()){
 					echo "<br><br><br>";
 					echo "<tr>";
-						echo "<td>Commentaire ".$lig['id_commentaire']."</td>";
+						//echo "<td>Commentaire ".$lig['id_commentaire']."</td>";
 						echo "<td>".$lig['Commentaire']."</td>";
-						echo "<td><a href=removeComment.php?id_commentaire=".$lig['id_commentaire']."&id_etudiant=".$_SESSION['id_etudiant']."> Supprimer le commentaire </a></td>";
+						echo "<td><a href=removeComment.php?id_commentaire=".$lig['id_commentaire']."&id_etudiant=".$_SESSION['id_etudiant']."> <img src='Content/img/remove-icon.png' alt='' class='icone'/></a></td>";
 					echo "</tr>";
 				}
 			?>
@@ -89,6 +86,7 @@ if(isset($_POST['formComment']))
 		<ul>
 			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
+			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
 			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>

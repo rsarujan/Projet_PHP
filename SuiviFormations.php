@@ -19,7 +19,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 </head>
 <body>
 <main>
@@ -54,6 +54,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 		<ul>
 			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
+			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
 			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>

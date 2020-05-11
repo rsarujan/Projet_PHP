@@ -145,10 +145,12 @@ if(isset($_SESSION['id_etudiant']))
 	</main>
 	<nav>
 		<ul>
-			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
-			<li><a href = "formations.php">Afficher les formations</a></li><br>
-			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
-			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
+			<li><a href = "editerProfileA.php">Editer mon profil</a></li><br>
+			<li><a href = "formationsA.php">Afficher les formations</a></li><br>
+			<li><a href = "AddFormation.php">Ajouter une formation</a></li><br>
+			<li><a href = "Enseignants.php">Liste des enseignants</a></li><br>
+			<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
+			<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
 			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>

@@ -27,21 +27,19 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	<h1> Liste des formations </h1>
 	<tr>
 		<td>
-			<STRONG>Nom de la formation</STRONG>
+			<STRONG>Nom des formations</STRONG>
 		</td>
-		<td>
-			<STRONG></STRONG>
-		</td>
+		
 	</tr>
 	<tr>
-		<?php 
+		<?php
+			echo "<br><br>";
 			$formation=$bdd->prepare('SELECT * from formation');
 			$formation->execute();
 			while($lig = $formation->fetch()){
 				//echo $lig['id_formation'];
 				echo "<tr>";
 					echo "<td>".$lig['intitule_formation']."</td>";
-					echo "<td><a href='removeFormation.php?id_formation=".$lig['id_formation']."'><img src='Content/img/remove-icon.png' alt='' class='icone'/></a></td>";
 				echo "</tr>";
 			}
 			?>
@@ -50,12 +48,10 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 </main>
 	<nav>
 		<ul>
-			<li><a href = "editerProfileA.php">Editer mon profil</a></li><br>
-			<li><a href = "formationsA.php">Afficher les formations</a></li><br>
-			<li><a href = "AddFormation.php">Ajouter une formation</a></li><br>
-			<li><a href = "Enseignants.php">Liste des enseignants</a></li><br>
-			<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
-			<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
+			<li><a href = "editerProfileP.php">Editer mon profil</a></li><br>
+			<li><a href = "formationsP.php">Afficher les formations</a></li><br>
+			<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
+			<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
 			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>			

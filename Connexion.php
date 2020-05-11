@@ -53,12 +53,13 @@ if(isset($_POST['formconnexion']))
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 
 </head>
 <body>
+<main>
 	<div align="center">
-		<h2>Connexion</h2>
+		<h1>Connexion</h1>
 		<br><br><br>
 		<form method="POST" action="">
 			<input type="email" name="mailconnect" placeholder="Mail">
@@ -73,5 +74,6 @@ if(isset($_POST['formconnexion']))
 			}
 		?>
 	</div>
+</main>
 </body>
 </html>

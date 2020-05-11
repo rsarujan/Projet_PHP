@@ -19,7 +19,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="fichier.css" />
+	<link rel="stylesheet" href="Content/css/nobel.css" />
 </head>
 <body>
 <main>
@@ -27,7 +27,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	<h1> Liste des étudiants </h1>
 	<tr>
 		<td>
-			<STRONG>id</STRONG>
+			<STRONG>id Etudiant</STRONG>
 		</td>
 		<td>
 			<STRONG>Nom</STRONG>
@@ -50,6 +50,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			$formation->execute();
 			while($lig = $formation->fetch(PDO::FETCH_ASSOC)){
 				//echo $lig['id_formation'];
+				echo "<br><br>";
 				echo "<tr>";
 					echo "<td>".$lig['id_etudiant']."</td>";
 					echo "<td><a href='AddFilesE.php?id_etudiant=".$lig['id_etudiant']."'>";
@@ -82,9 +83,10 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 </main>
 	<nav>
 		<ul>
-			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
-			<li><a href = "formations.php">Afficher les formations</a></li><br>
-			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
+			<li><a href = "editerProfileP.php">Editer mon profil</a></li><br>
+			<li><a href = "formationsP.php">Afficher les formations</a></li><br>
+			<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
+			<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
 			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
