@@ -15,7 +15,7 @@ if(isset($_SESSION['id_etudiant']))
 		$nouveauAdresse = htmlspecialchars($_POST['nouveauAdresse']);
 		$insertAdresse = $bdd->prepare("UPDATE Utilisateur SET adresse = ? WHERE id_etudiant = ?");
 		$insertAdresse->execute(array($nouveauAdresse,$_SESSION['id_etudiant']));
-		header('Location: Connexion.php');
+		header('Location: index.php');
 	}
 
 	if(isset($_POST['nouveauNumTel']) and !empty($_POST['nouveauNumTel']) and $_POST['nouveauNumTel'] != $user['nouveauNumTel'])
@@ -23,7 +23,7 @@ if(isset($_SESSION['id_etudiant']))
 		$nouveauNumTel = htmlspecialchars($_POST['nouveauNumTel']);
 		$insertnumTel = $bdd->prepare("UPDATE Utilisateur SET num_tel = ? WHERE id_etudiant = ?");
 		$insertnumTel->execute(array($nouveauNumTel,$_SESSION['id_etudiant']));
-		header('Location: Connexion.php');
+		header('Location: index.php');
 	}
 
 	if(isset($_POST['nouveaumail']) and !empty($_POST['nouveaumail']) and $_POST['nouveaumail'] != $user['nouveaumail'])
@@ -31,7 +31,7 @@ if(isset($_SESSION['id_etudiant']))
 		$nouveaumail = htmlspecialchars($_POST['nouveaumail']);
 		$insertmail = $bdd->prepare("UPDATE Utilisateur SET mail = ? WHERE id_etudiant = ?");
 		$insertmail->execute(array($nouveaumail,$_SESSION['id_etudiant']));
-		header('Location: Connexion.php');
+		header('Location: index.php');
 	}
 
 	if(isset($_POST['nouveauMdp1']) and !empty($_POST['nouveauMdp1']) and isset($_POST['nouveauMdp2']) and !empty($_POST['nouveauMdp2']))
@@ -43,7 +43,7 @@ if(isset($_SESSION['id_etudiant']))
 		{
 			$insertMdp = $bdd->prepare("UPDATE Utilisateur SET mdp = ? WHERE id_etudiant = ?");
 			$insertMdp->execute(array($mdp1,$_SESSION['id_etudiant']));
-			header('Location: Connexion.php');
+			header('Location: index.php');
 		}
 		else
 			$msg = "Vos deux mot de passes ne correspondent pas !";
@@ -149,7 +149,7 @@ if(isset($_SESSION['id_etudiant']))
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>
@@ -158,5 +158,5 @@ if(isset($_SESSION['id_etudiant']))
 <?php
 }
 else
-	header("Location: Connexion.php");
+	header("Location: index.php");
 ?>

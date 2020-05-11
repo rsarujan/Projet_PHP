@@ -87,7 +87,7 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

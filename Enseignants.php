@@ -73,7 +73,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			<li><a href = "Enseignants.php">Liste des enseignants</a></li><br>
 			<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
 			<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

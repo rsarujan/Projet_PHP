@@ -85,7 +85,7 @@ if(isset($_SESSION['id_etudiant']))
 			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "Deindex.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>
@@ -94,5 +94,5 @@ if(isset($_SESSION['id_etudiant']))
 <?php
 }
 else
-	header("Location: Connexion.php");
+	header("Location: index.php");
 ?>
