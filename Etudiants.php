@@ -44,12 +44,10 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	</tr>
 	<tr>
 		<?php 
-			//$formation=$bdd->prepare('SELECT DISTINCT id_etudiant,Nom,Prenom,choixFormation,Intitule_formation,libelle from Utilisateur u, DocumentsFourni df, Formation f, Statuts s where u.TypeUser=3 and u.choixFormation=df.id_formation and df.id_formation=f.id_formation and u.Status=s.id_statuts ORDER BY choixFormation ASC');
 			echo "<br><br>";
 			$formation=$bdd->prepare('SELECT DISTINCT id_etudiant,Nom,Prenom,choixFormation,Intitule_formation,libelle, u.id_statuts from Utilisateur u, DocumentsFourni df, Formation f, Statuts s where u.TypeUser=3 and u.choixFormation=f.id_formation and u.id_statuts=s.id_statuts ORDER BY choixFormation,id_etudiant ASC');
 			$formation->execute();
 			while($lig = $formation->fetch(PDO::FETCH_ASSOC)){
-				//echo $lig['id_formation'];
 				echo "<tr>";
 					echo "<td>".$lig['id_etudiant']."</td>";
 					echo "<td><a href='AddFilesE.php?id_etudiant=".$lig['id_etudiant']."'>";
@@ -58,22 +56,6 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 					echo "<td>".$lig['Intitule_formation']."</td>";
 					echo "<td>".$lig['libelle']."</td>";
 					echo "<td><a href='EditEtudiant.php?id_statut=".$lig["id_statuts"]."&id_etudiant=".$lig["id_etudiant"]."'><img src='Content/img/edit-icon.png' alt='' class='icone'/></a></td>";
-
-
-
-					//echo "<td><a href='addFiles.php?id_formation=".$lig['id_formation']."'>Postuler</a></td>";
-					//echo $lig['id_formation'];
-					//echo "<td>".$lig['id_formation']."</td>";
-					/*echo "<td><a href=file.php?id_document=".$lig['id_document']."> Télécharger un fichier </a></td>";
-					echo "<td><a href=remove.php?id_file=".$lig['id_document']."> Supprimer le fichier </a></td>";
-					
-					$stat=$bdd->prepare('SELECT * from DocumentsFourni df, Documents d where df.id_documents = d.id_document and d.id_document=?');
-					$stat->execute(array($lig['id_document']));
-					while($row = $stat->fetch())
-					{
-						echo "<td><a target='_blank' href='view.php?id_file=".$row["id_file"]."'>".$row["name"]."</a></td>";
-					}
-					print_r($stat->fetch());*/
 				echo "</tr>";
 			}
 			?>

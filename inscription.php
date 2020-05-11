@@ -40,7 +40,7 @@ if(isset($_POST['forminscription']))
 						$insertion = $bdd->prepare("INSERT INTO Utilisateur(Nom,Prenom, carte_id, date_naiss, adresse, num_tel, mail, mdp, TypeUser) VALUES (?,?,?,?,?,?,?,?,?)");
 						$insertion->execute(array($nom,$prenom,$carte_id,$date_naiss,$adresse,$num_tel,$mail,$mdp,3));
 						$erreur = "Votre compte à bien été créé ! <a href=\"index.php\">Me connecter </a>";
-						echo $nom,$prenom,$carte_id,$date_naiss,$adresse,$num_tel,$mail,$mail2,$mdp,$mdp2;
+						//echo $nom,$prenom,$carte_id,$date_naiss,$adresse,$num_tel,$mail,$mail2,$mdp,$mdp2;
 
 						//print_r($insertion);
 

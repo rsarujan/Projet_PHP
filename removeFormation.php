@@ -14,10 +14,8 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 	$reqFormation = $bdd->prepare("SELECT * FROM Formation WHERE id_formation = ?");
 	$reqFormation->execute(array($getFormation));
 	$formationInfo = $reqFormation->fetch();
-	//print_r($formationInfo);
 }
 
-//echo $d['id_document'];
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +26,6 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 
 	$requete = $bdd->prepare("DELETE FROM Formation WHERE id_formation=?");
 	$requete->execute(array($formationInfo['id_formation']));
-	//print_r($requete);
 	header("Location: formationsA.php");
 	?>
 </body>

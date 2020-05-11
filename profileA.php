@@ -46,7 +46,6 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 				<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
 				<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
 				<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
-				<!--<a href = "indexFile.php">add file</a><br>-->
 				<?php 
 			}
 			if(isset($erreur))
@@ -54,14 +53,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 				echo '<font color="red">'.$erreur.'</font>';
 			}
 		?></ul></nav>
-	<!--<nav>
-		<ul>
-			<li><a href="profile.php">Afficher mon profile</a></li>
 
-			<li><a href="editerProfile.php">Éditer mon profile</a></li>
-			<li><a href="formations.php">Afficher les formations</a></li>
-		</ul>
-	</nav>-->
 </body>
 </html>
 

@@ -17,9 +17,5 @@ if(isset($_GET['id_file']) and $_GET['id_file'] > 0)
 	header('Content-Type:'.$row['mime']);
 	echo $row['data'];
 }
-//$id=isset($_GET['id_file'])? $_GET['id_file']:"";
-//$row = $stat->fetch();
-
-
 
 ?>

@@ -9,19 +9,6 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	$requser->execute(array($getid));
 	$userinfo = $requser->fetch();
 }
-
-/*if(isset($_POST['formComment']))
-{
-	$comment = htmlspecialchars($_POST['Commentaire']);
-
-	if(!empty($_POST['Commentaire']))
-	{
-		$insertion = $bdd->prepare("INSERT INTO Commentaire(id_etudiant,Commentaire) VALUES (?,?)");
-		$insertion->execute(array($_SESSION['id_etudiant'],$comment));
-		$erreur = "Votre message à bien été envoyé!";
-		header("Location: Commentaire.php");
-	}
-}*/
 ?>
 
 
@@ -63,8 +50,6 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 						echo "<td>".$lig['Nom']."</td>";
 						echo "<td>".$lig['Prenom']."</td>";
 						echo "<td>".$lig['Commentaire']."</td>";
-						//echo "<td>".$lig['Commentaire']."</td>";
-						//echo "<td><a href=removeComment.php?id_commentaire=".$lig['id_commentaire']."&id_etudiant=".$_SESSION['id_etudiant']."> Supprimer le commentaire </a></td>";
 					echo "</tr>";
 				}
 			?>

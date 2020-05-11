@@ -22,11 +22,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 		$type=$_FILES['myfile']['type'];
 		$data=file_get_contents($_FILES['myfile']['tmp_name']);
 		$stnt=$bdd->prepare('INSERT INTO DocumentsFourni(name,mime,data, id_documents, id_etu, id_formation, status) VALUES(?,?,?,?,?,?,?)');
-		//$stnt->bindParam(1,$name);
-		//$stnt->bindParam(2,$type);
-		//$stnt->bindParam(3,$data);
 		$stnt->execute(array($name,$type,$data, 1,9,1,1));
-		//$_FILES['myfile']['']
 	}
 	?>
 	<p></p>

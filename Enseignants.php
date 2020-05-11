@@ -42,24 +42,10 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			$enseignants=$bdd->prepare('SELECT * from Utilisateur where TypeUser=2');
 			$enseignants->execute();
 			while($lig = $enseignants->fetch()){
-				//echo $lig['id_formation'];
 				echo "<tr>";
 					echo "<td>".$lig['Nom']."</td>";
 					echo "<td>".$lig['Prenom']."</td>";
 					echo "<td>".$lig['mail']."</td>";
-					//echo "<td><a href='addFiles.php?id_formation=".$lig['id_formation']."'>Postuler</a></td>";
-					//echo $lig['id_formation'];
-					//echo "<td>".$lig['id_formation']."</td>";
-					/*echo "<td><a href=file.php?id_document=".$lig['id_document']."> Télécharger un fichier </a></td>";
-					echo "<td><a href=remove.php?id_file=".$lig['id_document']."> Supprimer le fichier </a></td>";
-					
-					$stat=$bdd->prepare('SELECT * from DocumentsFourni df, Documents d where df.id_documents = d.id_document and d.id_document=?');
-					$stat->execute(array($lig['id_document']));
-					while($row = $stat->fetch())
-					{
-						echo "<td><a target='_blank' href='view.php?id_file=".$row["id_file"]."'>".$row["name"]."</a></td>";
-					}
-					print_r($stat->fetch());*/
 				echo "</tr>";
 			}
 			?>

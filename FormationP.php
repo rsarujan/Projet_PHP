@@ -37,7 +37,6 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			$formation=$bdd->prepare('SELECT * from formation');
 			$formation->execute();
 			while($lig = $formation->fetch()){
-				//echo $lig['id_formation'];
 				echo "<tr>";
 					echo "<td>".$lig['intitule_formation']."</td>";
 				echo "</tr>";

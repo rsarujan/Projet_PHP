@@ -26,7 +26,6 @@ if(isset($_POST['formconnexion']))
 			$_SESSION['adresse'] = $userinfo['adresse'];
 			$_SESSION['num_tel'] = $userinfo['num_tel'];
 			$_SESSION['mail'] = $userinfo['mail'];
-			//echo $_SESSION['id_etudiant'];
 			if ($userinfo['TypeUser'] == 1)
 			{
 				header("Location: profileA.php?id_etudiant=".$_SESSION['id_etudiant']);

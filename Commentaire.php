@@ -75,7 +75,6 @@ if(isset($_POST['formComment']))
 				while($lig = $doc->fetch()){
 					echo "<br><br><br>";
 					echo "<tr>";
-						//echo "<td>Commentaire ".$lig['id_commentaire']."</td>";
 						echo "<td>".$lig['Commentaire']."</td>";
 						echo "<td><a href=removeComment.php?id_commentaire=".$lig['id_commentaire']."&id_etudiant=".$_SESSION['id_etudiant']."> <img src='Content/img/remove-icon.png' alt='' class='icone'/></a></td>";
 					echo "</tr>";

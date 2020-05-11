@@ -15,20 +15,13 @@ function randomPassword() {
 if(isset($_POST['forminscription']))
 {
 
-	/*$tmdp=randomPassword();
-	echo $tmdp;*/
-	
-	//echo $mdp;
 	$nom = htmlspecialchars($_POST['Nom']);
 	$prenom = htmlspecialchars($_POST['Prenom']);
 	$num_tel = htmlspecialchars($_POST['num_tel']);
 	$mail = htmlspecialchars($_POST['mail']);
 
 	$mdp = sha1($_POST['mdp']);		//sha1 est un type d'encodage
-	
 
-	//echo $mdp;
-	//echo bruteforce_sha1($mdp, timestamp);
 	
 	if(!empty($_POST['Nom']) and !empty($_POST['Prenom']) and !empty($_POST['num_tel'])
 		and !empty($_POST['mail'])
@@ -45,12 +38,6 @@ if(isset($_POST['forminscription']))
 				$insertion->execute(array($nom,$prenom,$num_tel,$mail,$mdp,2));
 				$erreur = "Le compte enseignant à bien été créé ! <a href=\"Enseignants.php\">Liste des enseignants </a>";
 				header('Location: Enseignants.php');
-				
-				//echo $nom,$prenom,$carte_id,$date_naiss,$adresse,$num_tel,$mail,$mail2,$mdp,$mdp2;
-
-					//print_r($insertion);
-
-					//header('Location: inscription.php');
 			}
 			else
 				$erreur = "Adresse mail déjà utilisée !";
@@ -59,8 +46,6 @@ if(isset($_POST['forminscription']))
 	else
 		$erreur = "Tous les champs doivent être remplis !";
 }
-
-//echo print_r($insertion);
 ?>
 
 

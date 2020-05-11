@@ -22,9 +22,7 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 	$redDoc->execute(array($id_document));
 	$document = $redDoc->fetch();
 
-	//echo $document;
 }
-//echo $d['id_document'];
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +32,6 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 	echo $userinfo['id_etudiant'], $formInfo['id_formation'], $document['id_documents'];
 
 	$requete = $bdd->prepare("DELETE FROM DocumentsFourni WHERE id_etu=? and id_documents=?");
-	//DELETE * FROM DocumentsFourni WHERE id_etu=9 and id_formation=1 and id_documents=2;
 	$requete->execute(array($userinfo['id_etudiant'], $document['id_documents']));
 	header("Location: addFiles.php?id_formation=".$formInfo['id_formation']);
 	?>

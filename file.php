@@ -24,15 +24,6 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 	$formInfo = $reqFormation->fetch();
 }
 
-/*if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
-{
-	$id_document = intval($_GET['id_document']);
-	$redDoc = $bdd->prepare("SELECT * FROM DocumentsFourni WHERE id_document = ? and id_etudiant=?");
-	$redDoc->execute(array($id_document,$userinfo['id_etudiant']));
-	$document = $redDoc->fetch();
-
-	//echo $document;
-}*/
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +33,6 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 </head>
 <body>
 	<?php
-	//echo $formInfo['id_formation'];
-	//echo $document['id_document'];
 	if(isset($_POST['btn']))
 	{
 		$name = $_FILES['myfile']['name'];
@@ -59,17 +48,6 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 		header("Location: addFiles.php?id_formation=".$formInfo['id_formation']);
 	}
 	?>
-	<!--<p></p>
-	<ol>
-		<?php
-		/*$stat=$bdd->prepare('SELECT * from DocumentsFourni');
-		$stat->execute();
-		while($row = $stat->fetch())
-		{
-			echo "<li><a target='_blank' href='view.php?id_file=".$row["id_file"]."'>".$row["name"]."</a></li>";
-		}*/
-		?>
-	</ol>-->
 	<form method="post" enctype="multipart/form-data">
 		<input type="file" name="myfile">
 		<button name="btn">Upload</button>

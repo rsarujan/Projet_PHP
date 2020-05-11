@@ -35,7 +35,6 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 	<link rel="stylesheet" href="Content/css/nobel.css" />
 </head>
 <body>
-	<!--<?php //echo $formInfo['id_formation'];?>-->
 	<main>
 		<table>
 			<h1>Dépôts de fichiers</h1>
@@ -44,7 +43,6 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 					<STRONG>Fichiers à déposer</STRONG>
 				</td>
 				<td>
-					<!--<STRONG>Déposer</STRONG>-->
 				</td>
 				<td>
 
@@ -71,7 +69,6 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 						{
 							echo "<td><a target='_blank' href='view.php?id_file=".$row["id_file"]."'>".$row["name"]."</a></td>";
 						}
-						//print_r($stat->fetch());
 					echo "</tr>";
 					$userUpdate=$bdd->prepare('UPDATE Utilisateur SET choixFormation = ? WHERE id_etudiant=?');
 						$userUpdate->execute(array($formInfo['id_formation'],$_SESSION['id_etudiant']));

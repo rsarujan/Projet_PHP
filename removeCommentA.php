@@ -14,10 +14,8 @@ if(isset($_GET['id_commentaire']) and $_GET['id_commentaire'] > 0)
 	$reqComm = $bdd->prepare("SELECT * FROM Commentaire WHERE id_commentaire = ?");
 	$reqComm->execute(array($getCommentaire));
 	$commInfo = $reqComm->fetch();
-	//print_r($commInfo);
 }
 
-//echo $d['id_document'];
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +26,6 @@ if(isset($_GET['id_commentaire']) and $_GET['id_commentaire'] > 0)
 
 	$requete = $bdd->prepare("DELETE FROM Commentaire WHERE id_etudiant=? and id_commentaire=?");
 	$requete->execute(array($userinfo['id_etudiant'], $commInfo['id_commentaire']));
-	//print_r($requete);
 	header("Location: CommentaireL_A.php");
 	?>
 </body>
