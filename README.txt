@@ -38,4 +38,4 @@ Pour l'administrateur, on n'a pas le choix il faut faire l'inscription comme pou
 Pour l'enseignant, il faut passer par l'administrateur pour créer un compte enseignant.
 
 
-Si avec cette manipulation ne marche pas, il faudrait que vous remplaciez sha1 dans le fichier inscription.php et index.php par htmlspecialchars et vous refaites les manipulations mentionnées en haut.
+Si avec cette manipulation ne marche pas, il faudrait que vous remplaciez sha1 dans les fichiers inscription.php et index.php par htmlspecialchars et vous refaites les manipulations mentionnées en haut.
