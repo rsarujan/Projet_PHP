@@ -2,7 +2,7 @@
 session_start();
 
 
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once 'db.php'; 
 
 if(isset($_POST['formconnexion']))
 {
@@ -28,14 +28,14 @@ if(isset($_POST['formconnexion']))
 			$_SESSION['mail'] = $userinfo['mail'];
 			if ($userinfo['TypeUser'] == 1)
 			{
-				header("Location: profileA.php?id_etudiant=".$_SESSION['id_etudiant']);
+				header("Location: Admin/profileA.php?id_etudiant=".$_SESSION['id_etudiant']);
 			}
 			else if ($userinfo['TypeUser'] == 2)
 			{
-				header("Location: profileP.php?id_etudiant=".$_SESSION['id_etudiant']);
+				header("Location: Prof/profileP.php?id_etudiant=".$_SESSION['id_etudiant']);
 			}
 			else
-				header("Location: profile.php?id_etudiant=".$_SESSION['id_etudiant']);
+				header("Location: Etudiant/profile.php?id_etudiant=".$_SESSION['id_etudiant']);
 		}
 		else
 			$erreur = "Mauvais mail ou mot de passe érroné";

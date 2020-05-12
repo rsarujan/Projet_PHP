@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 {
 	$getid = intval($_GET['id_etudiant']);
@@ -26,7 +26,7 @@ if(isset($_GET['id_commentaire']) and $_GET['id_commentaire'] > 0)
 
 	$requete = $bdd->prepare("DELETE FROM Commentaire WHERE id_etudiant=? and id_commentaire=?");
 	$requete->execute(array($userinfo['id_etudiant'], $commInfo['id_commentaire']));
-	header("Location: CommentaireL_A.php");
+	header("Location: Commentaire.php");
 	?>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 
 if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 {
@@ -19,7 +19,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="Content/css/nobel.css" />
+	<link rel="stylesheet" href="fichier.css" />
 </head>
 <body>
 <main>
@@ -33,7 +33,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	</tr>
 	<tr>
 		<?php
-			echo "<br><br>";
+		echo "<br><br>";
 			$formation=$bdd->prepare('SELECT * from formation');
 			$formation->execute();
 			while($lig = $formation->fetch()){
@@ -47,11 +47,9 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 </main>
 	<nav>
 		<ul>
-			<li><a href = "editerProfileP.php">Editer mon profil</a></li><br>
-			<li><a href = "formationsP.php">Afficher les formations</a></li><br>
+			<li><a href = "formationsA.php">Afficher les formations</a></li><br>
 			<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
-			<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "../Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>			
 </body>

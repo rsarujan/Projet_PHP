@@ -1,5 +1,5 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 session_start();
 
 function randomPassword() {
@@ -54,7 +54,7 @@ if(isset($_POST['forminscription']))
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="Content/css/nobel.css" />
+	<link rel="stylesheet" href="../Content/css/nobel.css" />
 
 </head>
 <body>
@@ -128,7 +128,7 @@ if(isset($_POST['forminscription']))
 			<li><a href = "Enseignants.php">Liste des enseignants</a></li><br>
 			<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
 			<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "../Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 
 if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 {
@@ -19,29 +19,30 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="Content/css/nobel.css" />
+	<link rel="stylesheet" href="../Content/css/nobel.css" />
 </head>
 <body>
 <main>
 <table>
-	<h1> Liste des formations </h1>
+	<h1> Liste des candidatures </h1>
 	<tr>
 		<td>
-			<STRONG>Nom de la formation</STRONG>
+			<STRONG>Formation postulé</STRONG>
 		</td>
 		<td>
-			<STRONG>Candidater</STRONG>
+			<STRONG>Statut</STRONG>
 		</td>
 	</tr>
 	<tr>
 		<?php 
-		echo "<br><br>";
-			$formation=$bdd->prepare('SELECT * from formation');
-			$formation->execute();
-			while($lig = $formation->fetch()){
+			echo "<br><br>";
+			$formation=$bdd->prepare('SELECT Intitule_formation, libelle from Formation f, Utilisateur u, Statuts s where u.choixFormation=f.id_formation and u.id_statuts=s.id_statuts and u.id_etudiant=?');
+			$formation->execute(array($_SESSION['id_etudiant']));
+			while($lig = $formation->fetch(PDO::FETCH_ASSOC)){
 				echo "<tr>";
-					echo "<td>".$lig['intitule_formation']."</td>";
-					echo "<td><a href='addFiles.php?id_formation=".$lig['id_formation']."'>Postuler</a></td>";
+					echo "<td>".$lig['Intitule_formation']."</td>";
+					echo "<td>".$lig['libelle']."</td>";
+
 				echo "</tr>";
 			}
 			?>
@@ -54,7 +55,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "../Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

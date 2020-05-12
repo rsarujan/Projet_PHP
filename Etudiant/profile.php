@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 
 if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 {
@@ -18,7 +18,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="Content/css/nobel.css" />
+	<link rel="stylesheet" href="../Content/css/nobel.css" />
 
 </head>
 <body>
@@ -46,7 +46,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 				<li><a href = "formations.php">Afficher les formations</a></li><br>
 				<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 				<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-				<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+				<li><a href = "../Deconnexion.php">Se déconnecter</a></li><br>
 				<?php 
 			}
 			if(isset($erreur))

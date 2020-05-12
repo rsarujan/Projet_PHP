@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 
 if(isset($_SESSION['id_etudiant']))
 {
@@ -21,7 +21,7 @@ if(isset($_SESSION['id_etudiant']))
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="Content/css/nobel.css" />
+	<link rel="stylesheet" href="../Content/css/nobel.css" />
 
 </head>
 <body>
@@ -84,7 +84,7 @@ if(isset($_SESSION['id_etudiant']))
 			<li><a href = "editerProfile.php">Editer mon profil</a></li><br>
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "../Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

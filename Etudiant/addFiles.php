@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 {
 	$getid = intval($_GET['id_etudiant']);
@@ -32,7 +32,7 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 <html>
 <head>
 	<title>Déposer des fichiers</title>
-	<link rel="stylesheet" href="Content/css/nobel.css" />
+	<link rel="stylesheet" href="../Content/css/nobel.css" />
 </head>
 <body>
 	<main>
@@ -60,8 +60,8 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 					//echo $formInfo['id_formation'];
 					echo "<tr>";
 						echo "<td>".$lig['libelle']."</td>";
-						echo "<td><a href=file.php?id_document=".$lig['id_document']."&id_formation=".$formInfo['id_formation']."> <img src='Content/img/upload-icon.png' alt='' class='icone'/></a></td>";
-						echo "<td><a href=remove.php?id_document=".$lig['id_document']."&id_etudiant=".$_SESSION['id_etudiant']."&id_formation=".$formInfo['id_formation']."> <img src='Content/img/remove-icon.png' alt='' class='icone'/></a></td>";
+						echo "<td><a href=file.php?id_document=".$lig['id_document']."&id_formation=".$formInfo['id_formation']."> <img src='../Content/img/upload-icon.png' alt='' class='icone'/></a></td>";
+						echo "<td><a href=remove.php?id_document=".$lig['id_document']."&id_etudiant=".$_SESSION['id_etudiant']."&id_formation=".$formInfo['id_formation']."> <img src='../Content/img/remove-icon.png' alt='' class='icone'/></a></td>";
 						
 						$stat=$bdd->prepare('SELECT * from DocumentsFourni df, Documents d where df.id_documents = d.id_document and d.id_document=? and df.id_etu=?');
 						$stat->execute(array($lig['id_document'],$_SESSION['id_etudiant']));
@@ -84,7 +84,7 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 			<li><a href = "formations.php">Afficher les formations</a></li><br>
 			<li><a href = "SuiviFormations.php">Suivre candidature</a></li><br>
 			<li><a href ="Commentaire.php">Laisser un commentaire</a></li><br>
-			<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+			<li><a href = "../Deconnexion.php">Se déconnecter</a></li><br>
 		</ul>
 	</nav>
 </body>

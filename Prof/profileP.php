@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO('mysql:host=localhost;dbname=Projet_Php', 'root', 'root');
+include_once '../db.php';
 
 if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 {
@@ -18,7 +18,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 <html>
 <head>
 	<title>Projet PHP</title>
-	<link rel="stylesheet" href="Content/css/nobel.css" />
+	<link rel="stylesheet" href="../Content/css/nobel.css" />
 
 </head>
 <body>
@@ -39,13 +39,11 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			if(isset($_SESSION['id_etudiant']) and $userinfo['id_etudiant'] == $_SESSION['id_etudiant'])
 			{
 				?>
-				<li><a href = "editerProfileA.php">Editer mon profil</a></li><br>
-				<li><a href = "formationsA.php">Afficher les formations</a></li><br>
-				<li><a href = "AddFormation.php">Ajouter une formation</a></li><br>
-				<li><a href = "Enseignants.php">Liste des enseignants</a></li><br>
-				<li><a href = "AddEnseignant.php">Ajouter un enseignant</a></li><br>
-				<li><a href ="CommentaireL_A.php">Commentaire laissé</a></li><br>
-				<li><a href = "Deconnexion.php">Se déconnecter</a></li><br>
+				<li><a href = "editerProfileP.php">Editer mon profil</a></li><br>
+				<li><a href = "formationsP.php">Afficher les formations</a></li><br>
+				<li><a href = "Etudiants.php">Liste des étudiants</a></li><br>
+				<li><a href ="CommentaireL.php">Commentaire laissé</a></li><br>
+				<li><a href = "../Deconnexion.php">Se déconnecter</a></li><br>
 				<?php 
 			}
 			if(isset($erreur))
@@ -53,7 +51,6 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 				echo '<font color="red">'.$erreur.'</font>';
 			}
 		?></ul></nav>
-
 </body>
 </html>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 11, 2020 at 09:52 PM
+-- Generation Time: May 12, 2020 at 07:30 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
@@ -31,7 +31,8 @@ CREATE TABLE `Commentaire` (
 --
 
 INSERT INTO `Commentaire` (`id_commentaire`, `id_etudiant`, `Commentaire`) VALUES
-(7, 39, 'Test Bonjour');
+(7, 39, 'Test Bonjour'),
+(10, 39, 'Bonjour test 2');
 
 -- --------------------------------------------------------
 
@@ -170,9 +171,10 @@ CREATE TABLE `Utilisateur` (
 INSERT INTO `Utilisateur` (`id_etudiant`, `Nom`, `Prenom`, `carte_id`, `date_naiss`, `adresse`, `num_tel`, `mail`, `mdp`, `choixFormation`, `TypeUser`, `id_statuts`) VALUES
 (18, 'Admin', 'admin', 123, '2020-01-01', 'Université paris 13', 123, 'admin@parisnanterre.fr', 'd033e22ae348aeb5660fc2140aec35850c4da997', NULL, 1, NULL),
 (37, 'Prof1', 'Prof 1', NULL, NULL, NULL, 555, 'prof@parisnanterre.fr', 'd9f02d46be016f1b301f7c02a4b9c4ebe0dde7ef', NULL, 2, NULL),
-(39, 'Rajaratnam', 'Sarujan', 12345, '1998-08-17', 'test adresse', 12345, '39010018@parisnanterre.fr', '9cf95dacd226dcf43da376cdb6cbba7035218921', 2, 3, 2),
+(39, 'Rajaratnam', 'Sarujan', 12345, '1998-08-17', 'test adresse', 12345, '39010018@parisnanterre.fr', '9cf95dacd226dcf43da376cdb6cbba7035218921', 2, 3, 1),
 (40, 'Test 2', 'Test', 1234567, '2020-05-04', 'tryvubino', 98765, 'test@test.fr', '9cf95dacd226dcf43da376cdb6cbba7035218921', 3, 3, 1),
-(41, 'Etu2', 'etu2', 23456, '2020-05-04', '/', 234, 'etu2@parisnanterre.fr', '9cf95dacd226dcf43da376cdb6cbba7035218921', 2, 3, 6);
+(41, 'Etu2', 'etu2', 23456, '2020-05-04', '/', 234, 'etu2@parisnanterre.fr', '9cf95dacd226dcf43da376cdb6cbba7035218921', 2, 3, 6),
+(42, 'AZERTY', 'TITI', 987, '2020-05-11', '/', 989609, 'az@a.fr', '9cf95dacd226dcf43da376cdb6cbba7035218921', NULL, 3, NULL);
 
 --
 -- Indexes for dumped tables
@@ -234,7 +236,7 @@ ALTER TABLE `Utilisateur`
 -- AUTO_INCREMENT for table `Commentaire`
 --
 ALTER TABLE `Commentaire`
-  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `Documents`
@@ -246,7 +248,7 @@ ALTER TABLE `Documents`
 -- AUTO_INCREMENT for table `DocumentsFourni`
 --
 ALTER TABLE `DocumentsFourni`
-  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `Formation`
@@ -270,7 +272,7 @@ ALTER TABLE `Type`
 -- AUTO_INCREMENT for table `Utilisateur`
 --
 ALTER TABLE `Utilisateur`
-  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables
