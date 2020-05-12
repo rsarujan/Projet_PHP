@@ -30,6 +30,7 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 <html>
 <head>
 	<title>Dépôt de fichier</title>
+	<link rel="stylesheet" href="../Content/css/nobel.css" />
 </head>
 <body>
 	<?php
@@ -48,9 +49,10 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 		header("Location: addFiles.php?id_formation=".$formInfo['id_formation']);
 	}
 	?>
-	<form method="post" enctype="multipart/form-data">
+	<main>
+	<h1><form method="post" enctype="multipart/form-data">
 		<input type="file" name="myfile">
 		<button name="btn">Upload</button>
-	</form>
+	</form></h1></main>
 </body>
 </html>
