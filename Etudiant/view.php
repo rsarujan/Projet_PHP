@@ -1,5 +1,8 @@
 <?php
 include_once '../db.php';
+//permet de isualiser le fichier déposé dans une nouvelle fenetre
+
+//vérifie si l'id est passé en paramètre et si oui, on retourne l'utilisateur
 if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 {
 	$getid = intval($_GET['id_etudiant']);

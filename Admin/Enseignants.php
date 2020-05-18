@@ -39,6 +39,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	<tr>
 		<?php
 		echo "<br><br>";
+		//affiche la liste des enseignants ajouté dans la table utilisateur
 			$enseignants=$bdd->prepare('SELECT * from Utilisateur where TypeUser=2');
 			$enseignants->execute();
 			while($lig = $enseignants->fetch()){

@@ -36,6 +36,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	<tr>
 		<?php
 		echo "<br><br>";
+		//afficher et ou supprimer une formation
 			$formation=$bdd->prepare('SELECT * from formation');
 			$formation->execute();
 			while($lig = $formation->fetch()){

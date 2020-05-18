@@ -35,7 +35,7 @@ if(isset($_SESSION['id_etudiant']))
 		{
 			$insertMdp = $bdd->prepare("UPDATE Utilisateur SET mdp = ? WHERE id_etudiant = ?");
 			$insertMdp->execute(array($mdp1,$_SESSION['id_etudiant']));
-			header('Location: index.php');
+			header('Location: ../index.php');
 		}
 		else
 			$msg = "Vos deux mot de passes ne correspondent pas !";

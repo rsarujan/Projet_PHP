@@ -23,7 +23,7 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 <body>
 	<?php
 	echo $userinfo['id_etudiant'], $formationInfo['id_commentaire'];
-
+	//supprimer une formation
 	$requete = $bdd->prepare("DELETE FROM Formation WHERE id_formation=?");
 	$requete->execute(array($formationInfo['id_formation']));
 	header("Location: formationsA.php");

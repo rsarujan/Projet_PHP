@@ -23,6 +23,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 </head>
 <body>
 	<main>
+		<!--Profile administrateur-->
 		<div align="center"><h1>Profil de <?php echo $userinfo['Nom']." ".$userinfo['Prenom'];?></h1>
 		<br><br><br>
 		Nom = <?php echo $userinfo['Nom'];?><br>

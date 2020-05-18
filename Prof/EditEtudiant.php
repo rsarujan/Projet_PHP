@@ -58,6 +58,7 @@ if(isset($_SESSION['id_etudiant']))
 						Statuts:
 					</td>
 					<td>
+						<!--change le statut de la candidature de l'étudiant-->
 						<select name="nouveauStat">
 						    <option style="width:100px" value="1">Reçu</option>
 						    <option value="2">Reçu, incomplet en attente de complément</option>

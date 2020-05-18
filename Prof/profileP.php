@@ -23,6 +23,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 </head>
 <body>
 	<main>
+		<!--On affiche les données de l'utilsateur sur la page de profil-->
 		<div align="center"><h1>Profil de <?php echo $userinfo['Nom']." ".$userinfo['Prenom'];?></h1>
 		<br><br><br>
 		Nom = <?php echo $userinfo['Nom'];?><br>
@@ -48,7 +49,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			}
 			if(isset($erreur))
 			{
-				echo '<font color="red">'.$erreur.'</font>';
+				echo '<font color="red">'.$erreur.'</font>'; //permet d'afficher les erreurs en rouge
 			}
 		?></ul></nav>
 </body>

@@ -34,7 +34,7 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 			<tr>
 				<?php
 				echo "<br><br>";
-
+				//permet de visualiser tous les fichiers laissé par l'étudiant
 				$stat=$bdd->prepare('SELECT * from Documents d left join DocumentsFourni df on df.id_documents = d.id_document and df.id_etu=?');
 						$stat->execute(array($_GET['id_etudiant']));
 

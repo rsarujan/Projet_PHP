@@ -51,6 +51,7 @@ if(isset($_POST['formAddFormation']))
 		<br><br><br>
 		<form method="POST" action="">
 			<table>
+				<!--Ajoute une formation-->
 				<tr>
 					<td align="right">
 						Nom de la formation :

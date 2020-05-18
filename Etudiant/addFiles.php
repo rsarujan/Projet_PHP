@@ -59,17 +59,23 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 				while($lig = $doc->fetch()){
 					//echo $formInfo['id_formation'];
 					echo "<tr>";
+					//insérer un fichier
+						//affiche le nom du fichier à déposer
 						echo "<td>".$lig['libelle']."</td>";
+						//il insère le fichier avec l'id du fichier demandé
 						echo "<td><a href=file.php?id_document=".$lig['id_document']."&id_formation=".$formInfo['id_formation']."> <img src='../Content/img/upload-icon.png' alt='' class='icone'/></a></td>";
+						//il supprime le fichier avec l'id du fichier déposé
 						echo "<td><a href=remove.php?id_document=".$lig['id_document']."&id_etudiant=".$_SESSION['id_etudiant']."&id_formation=".$formInfo['id_formation']."> <img src='../Content/img/remove-icon.png' alt='' class='icone'/></a></td>";
-						
+						//il affiche tous les fichiers déposé en face de chaque libelle des documents
 						$stat=$bdd->prepare('SELECT * from DocumentsFourni df, Documents d where df.id_documents = d.id_document and d.id_document=? and df.id_etu=?');
 						$stat->execute(array($lig['id_document'],$_SESSION['id_etudiant']));
 						while($row = $stat->fetch())
 						{
+							//ouverture des fichiers dans un nouveau onglet
 							echo "<td><a target='_blank' href='view.php?id_file=".$row["id_file"]."'>".$row["name"]."</a></td>";
 						}
 					echo "</tr>";
+					//il met à jour la table utilisateur avec la donnée du choixFormation
 					$userUpdate=$bdd->prepare('UPDATE Utilisateur SET choixFormation = ? WHERE id_etudiant=?');
 						$userUpdate->execute(array($formInfo['id_formation'],$_SESSION['id_etudiant']));
 				}

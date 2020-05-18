@@ -36,14 +36,16 @@ if(isset($_GET['id_formation']) and $_GET['id_formation'] > 0)
 	<?php
 	if(isset($_POST['btn']))
 	{
+		//récupère les informations du fichiers par exemple le nom, le type et les données en binaire
 		$name = $_FILES['myfile']['name'];
 		$type=$_FILES['myfile']['type'];
 		$data=file_get_contents($_FILES['myfile']['tmp_name']);
 		echo $document['id_document'],$_SESSION['id_etudiant'],$formInfo['id_formation'];
+		//insère la donnée dans la base de données sous format blob
 		$stnt=$bdd->prepare('INSERT INTO DocumentsFourni(name,mime,data, id_documents, id_etu) VALUES(?,?,?,?,?)');
 		$stnt->execute(array($name,$type,$data,$document['id_document'],$_SESSION['id_etudiant']));
 
-
+		//une fois déposé le fichier, il met à jour la case choixFormation de l'utilisateur
 		$utilisateurUpdate=$bdd->prepare('UPDATE Utilisateur SET choixFormation=?, id_statuts = ? WHERE id_etudiant = ?');
 		$utilisateurUpdate->execute(array($formInfo['id_formation'],1, $_SESSION['id_etudiant']));
 		header("Location: addFiles.php?id_formation=".$formInfo['id_formation']);

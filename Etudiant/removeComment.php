@@ -23,7 +23,7 @@ if(isset($_GET['id_commentaire']) and $_GET['id_commentaire'] > 0)
 <body>
 	<?php
 	echo $userinfo['id_etudiant'], $commInfo['id_commentaire'];
-
+	//supprimer un commentaire laissé
 	$requete = $bdd->prepare("DELETE FROM Commentaire WHERE id_etudiant=? and id_commentaire=?");
 	$requete->execute(array($userinfo['id_etudiant'], $commInfo['id_commentaire']));
 	header("Location: Commentaire.php");

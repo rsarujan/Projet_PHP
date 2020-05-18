@@ -33,6 +33,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	</tr>
 	<tr>
 		<?php
+		//affiche toutes les formations
 			echo "<br><br>";
 			$formation=$bdd->prepare('SELECT * from formation');
 			$formation->execute();

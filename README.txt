@@ -25,11 +25,10 @@ Scénarios:
 		- id : admin@parisnanterre.fr		mdp : admin
 	Prof:
 		- id : prof@parisnanterre.fr		mdp: prof
+		- id : professeur@parisnanterre.fr	mdp: test1
 	Etudiants:
 		- id : 39010018@parisnanterre.fr	mdp: azerty
-		- id : test@test.fr			mdp: azerty
-		- id : etu2@parisnanterre.fr		mdp: azerty
-		- id : az@a.fr				mdp: azerty
+		- id : eleve@parisnanterre.fr		mdp: eleve
 
 Si aucun de ces scénarios ne marche, cela est dû à l'encodage (sha1) du mot de passe.
 Pour cela je vous invite à supprimer tous les utilisateurs de la base de données et re faire l'inscription.
@@ -39,3 +38,26 @@ Pour l'enseignant, il faut passer par l'administrateur pour créer un compte ens
 
 
 Si avec cette manipulation ne marche pas, il faudrait que vous remplaciez sha1 dans les fichiers inscription.php et index.php par htmlspecialchars et vous refaites les manipulations mentionnées en haut.
+
+
+Fonctions réalisés:
+Administrateur:
+	- Se connecter / S’inscrire / Modifier son profil / Se déconnecter
+	- Afficher / Ajouter / Supprimer une formation
+	- Lister / Ajouter un enseignant
+	- Afficher / Supprimer un commentaire laissé par un étudiant
+
+Professeur:
+	- Se connecter / S’inscrire / Modifier son profil / Se déconnecter
+	- Afficher les formations
+	- Lister les étudiants ayant postulé à une formation
+	- Changer le statut de la candidature de l’étudiant
+	- Consulter les fichiers déposés par l’étudiant
+	- Exporter une liste d’étudiants ayant postulé à une formation en particulier avec l’état de la candidature
+	- Afficher un commentaire laissé par un étudiant
+
+Étudiant:
+	- Se connecter / S’inscrire / Modifier son profil / Se déconnecter
+	- Afficher / Postuler / Suivre une candidature
+	- Déposer des fichiers
+	- Laisser un commentaire

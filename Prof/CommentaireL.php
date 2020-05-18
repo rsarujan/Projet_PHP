@@ -39,6 +39,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 			</td>
 		</tr>
 			<?php
+			//liste la liste des commentaires laissé par les étudiants
 			echo "<br><br>";
 				$doc=$bdd->prepare('SELECT u.id_etudiant,Nom,Prenom,Commentaire from Commentaire c, Utilisateur u where u.id_etudiant=c.id_etudiant');
 				$doc->execute();

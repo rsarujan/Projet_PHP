@@ -40,16 +40,19 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 		</tr>
 			<?php
 			echo "<br><br>";
+			//liste les commentaires laissé par les étudiants
 				$doc=$bdd->prepare('SELECT u.id_etudiant,Nom,Prenom,id_commentaire,Commentaire from Commentaire c, Utilisateur u where u.id_etudiant=c.id_etudiant');
 				$doc->execute();
 
 				while($lig = $doc->fetch()){
 					
 					echo "<tr>";
+					//il range la liste des commentaires dans un tableau
 						echo "<td>".$lig['id_etudiant']."</td>";
 						echo "<td>".$lig['Nom']."</td>";
 						echo "<td>".$lig['Prenom']."</td>";
 						echo "<td>".$lig['Commentaire']."</td>";
+						//supprimer un commentaire laissé par un étudiant
 						echo "<td><a href=removeCommentA.php?id_commentaire=".$lig['id_commentaire']."&id_etudiant=".$lig['id_etudiant']."> <img src='../Content/img/remove-icon.png' alt='' class='icone'/></a></td>";
 					echo "</tr>";
 				}

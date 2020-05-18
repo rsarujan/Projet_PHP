@@ -104,6 +104,7 @@ if (isset($_POST['choixFormation'])) {
 	</tr>
 	<tr>
 		<?php 
+		//affiche la liste des étudiants ayant postulé à une candidature
 			echo "<br><br>";
 			$formation=$bdd->prepare('SELECT DISTINCT id_etudiant,Nom,Prenom,choixFormation,Intitule_formation,libelle, u.id_statuts from Utilisateur u, DocumentsFourni df, Formation f, Statuts s where u.TypeUser=3 and u.choixFormation=f.id_formation and u.id_statuts=s.id_statuts ORDER BY choixFormation,id_etudiant ASC');
 			$formation->execute();

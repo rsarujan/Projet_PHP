@@ -30,7 +30,7 @@ if(isset($_GET['id_document']) and $_GET['id_document'] > 0)
 <body>
 	<?php
 	echo $userinfo['id_etudiant'], $formInfo['id_formation'], $document['id_documents'];
-
+	//supprimer un fichier déposé
 	$requete = $bdd->prepare("DELETE FROM DocumentsFourni WHERE id_etu=? and id_documents=?");
 	$requete->execute(array($userinfo['id_etudiant'], $document['id_documents']));
 	header("Location: addFiles.php?id_formation=".$formInfo['id_formation']);

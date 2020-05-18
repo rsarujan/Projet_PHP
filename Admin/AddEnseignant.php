@@ -2,6 +2,7 @@
 include_once '../db.php';
 session_start();
 
+//crée un mdp aléatoire de 8 caractère
 function randomPassword() {
 	$password = "";
     $charset = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
@@ -31,9 +32,11 @@ if(isset($_POST['forminscription']))
 		{
 			$reqmail = $bdd->prepare("SELECT * FROM Utilisateur WHERE mail = ?");
 			$reqmail->execute(array($mail));
+			//vérifie si l'enseignant est dans la base de données
 			$mailexist = $reqmail->rowCount();
 			if($mailexist == 0)
 			{
+				//ajjoute un enseignant s'il n'existe pas dans la base de données
 				$insertion = $bdd->prepare("INSERT INTO Utilisateur(Nom,Prenom,num_tel, mail, mdp, TypeUser) VALUES (?,?,?,?,?,?)");
 				$insertion->execute(array($nom,$prenom,$num_tel,$mail,$mdp,2));
 				$erreur = "Le compte enseignant à bien été créé ! <a href=\"Enseignants.php\">Liste des enseignants </a>";

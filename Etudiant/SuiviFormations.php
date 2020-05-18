@@ -36,6 +36,7 @@ if(isset($_GET['id_etudiant']) and $_GET['id_etudiant'] > 0)
 	<tr>
 		<?php 
 			echo "<br><br>";
+			//affiche l'état de la candidature avec la formation postulé
 			$formation=$bdd->prepare('SELECT Intitule_formation, libelle from Formation f, Utilisateur u, Statuts s where u.choixFormation=f.id_formation and u.id_statuts=s.id_statuts and u.id_etudiant=?');
 			$formation->execute(array($_SESSION['id_etudiant']));
 			while($lig = $formation->fetch(PDO::FETCH_ASSOC)){

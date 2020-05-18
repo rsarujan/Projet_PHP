@@ -1,5 +1,5 @@
 <?php
-include_once '../db.php';
+include_once 'db.php';
 session_start();
 
 if(isset($_POST['forminscription']))
@@ -12,7 +12,7 @@ if(isset($_POST['forminscription']))
 	$num_tel = htmlspecialchars($_POST['num_tel']);
 	$mail = htmlspecialchars($_POST['mail']);
 	$mail2 = htmlspecialchars($_POST['mail']);
-	$mdp = sha1($_POST['mdp']);		//sha1 est un type d'encodage
+	$mdp = sha1($_POST['mdp']);		//sha1 est un type d'encodage pour le mot de passe
 	$mdp2 = sha1($_POST['mdp2']);
 
 	
@@ -26,12 +26,12 @@ if(isset($_POST['forminscription']))
 		if($mail == $mail2)
 		{
 
-			if(filter_var($mail, FILTER_VALIDATE_EMAIL))
+			if(filter_var($mail, FILTER_VALIDATE_EMAIL)) // on vérifie si on passe bien une adresse mail
 			{
 
 				$reqmail = $bdd->prepare("SELECT * FROM Utilisateur WHERE mail = ?");
 				$reqmail->execute(array($mail));
-				$mailexist = $reqmail->rowCount();
+				$mailexist = $reqmail->rowCount(); //on compte le nombre de ligne qui sort et si 0 donc il l'inscrit sinon il existe déjà l'utilisateur
 				if($mailexist == 0)
 				{
 					if($mdp == $mdp2)
@@ -85,7 +85,7 @@ if(isset($_POST['forminscription']))
 						Nom:
 					</td>
 					<td>
-						<input type="text" id="Nom" name="Nom" placeholder="Votre nom" value="<?php if(isset($nom)) {echo $nom;}?>">
+						<input type="text" id="Nom" name="Nom" placeholder="Votre nom" value="<?php if(isset($nom)) {echo $nom;}?>"> <!-- echo $nom  permettra d'afficher le nom dans la case d'input après avoir soumis le formulaire-->
 					</td>
 				</tr>
 				<tr>
@@ -173,7 +173,7 @@ if(isset($_POST['forminscription']))
 		<?php 
 			if(isset($erreur))
 			{
-				echo '<font color="red">'.$erreur.'</font>';
+				echo '<font color="red">'.$erreur.'</font>'; //permet d'afficher les erreurs en rouge
 			}
 		?>
 	</div>

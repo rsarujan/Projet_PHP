@@ -39,6 +39,7 @@ if(isset($_POST['formComment']))
 		<br><br><br>
 		<form method="POST" action="">
 			<table>
+				<!--L'étudiant peut laisser un commentaire dans un input-->
 				<tr>
 					<td align="right">
 						Commentaire / Message :
@@ -69,6 +70,7 @@ if(isset($_POST['formComment']))
 	</tr>
 			<?php
 			echo "<br><br>";
+			//affiche les commentaires laissé par l'étudiant en question
 				$doc=$bdd->prepare('SELECT * from Commentaire WHERE id_etudiant = ?');
 				$doc->execute(array($_SESSION['id_etudiant']));
 
